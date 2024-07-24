@@ -1,7 +1,20 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Catalogo_Web._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+    <style>
+        .product-image {
+            width: 250px; /* Ajusta este valor según tus necesidades */
+            height: 250px; /* Ajusta este valor según tus necesidades */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
     <main>
         <h2 class="mt-4">Bienvenido a nuestro catalogo de productos </h2>
         <h5 class="mt-4">Buscar:</h5>
@@ -60,24 +73,24 @@
             <%} %>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-            <asp:Repeater runat="server" ID="repProductGrid">
-                <ItemTemplate>
-                    <div class="col">
-                        <div class="border rounded-1 p-3 h-100 d-flex flex-column">
-                            <div class="mx-auto">
-                                <img src="<%#Eval("imageUrl") %>" class="img-fluid" alt="...">
-                            </div>
-                            <div class="card-body flex-column flex-lg-grow-1 align-content-end">
-                                <h5 class="card-title"><%#Eval("name") %></h5>
-                                <p class="card-text"><%#Eval("description")%></p>
-                                <a class="btn btn-outline-primary" href="ProductDetail.aspx?id=<%#Eval("id") %>">Ver Detalle</a>
-                            </div>
-                        </div>
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+    <asp:Repeater runat="server" ID="repProductGrid">
+        <ItemTemplate>
+            <div class="col">
+                <div class="border rounded-1 p-3 h-100 d-flex flex-column">
+                    <div class="product-image mx-auto">
+                        <img src="<%#Eval("imageUrl") %>" class="img-fluid" alt="...">
                     </div>
-                </ItemTemplate>
-            </asp:Repeater>
-        </div>
+                    <div class="card-body flex-column flex-lg-grow-1 align-content-end">
+                        <h5 class="card-title"><%#Eval("name") %></h5>
+                        <p class="card-text"><%#Eval("description")%></p>
+                        <a class="btn btn-outline-primary" href="ProductDetail.aspx?id=<%#Eval("id") %>">Ver Detalle</a>
+                    </div>
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:Repeater>
+</div>
     </main>
 
 </asp:Content>

@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductDetail.aspx.cs" Inherits="Catalogo_Web.ProductDetail" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductDetail.aspx.cs" Inherits="Catalogo_Web.ProductDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="row mx-auto">
-        <div class="col-4">
+    <div class="row mx-auto my-5">
+        <div class="col-2"></div>
+        <div class="col-3">
             <asp:Image runat="server" ID="imgProduct" class="img-fluid" alt="..."></asp:Image>
             <p>
                 <asp:Label runat="server" ID="lblDescription"></asp:Label>
@@ -12,7 +13,7 @@
 
         <div class="col-1"></div>
 
-        <div class="col-4">
+        <div class="col-3">
             <h3>
                 <asp:Label runat="server" ID="lblName"></asp:Label></h3>
             <h6 class="mb-0">Precio:</h6>
@@ -37,7 +38,7 @@
             <asp:Button Text="Añadir a favoritos ❤️" ID="btnFav" OnClick="btnFav_Click" CssClass="btn btn-primary" runat="server" />
             <% } %>
         </div>
-
+        <div class="col-2"></div>
     </div>
 
 </asp:Content>
