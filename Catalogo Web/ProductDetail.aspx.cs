@@ -1,13 +1,6 @@
 ﻿using Business;
 using Domain;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using static System.Runtime.CompilerServices.RuntimeHelpers;
-using System.Xml.Linq;
 using Dominio;
 
 namespace Catalogo_Web
@@ -15,6 +8,7 @@ namespace Catalogo_Web
     public partial class ProductDetail : System.Web.UI.Page
     {
         public bool isFavorite { get; set; }
+        public string productName { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,6 +26,7 @@ namespace Catalogo_Web
 
                     // Cargamos la informacion del producto
                     lblName.Text = product.name;
+                    Page.Title = product.name;
                     lblDescription.Text = product.description;
                     imgProduct.ImageUrl = product.imageUrl;
                     lblPrice.Text = product.price.ToString();

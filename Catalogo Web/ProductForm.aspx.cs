@@ -48,6 +48,8 @@ namespace Catalogo_Web
 
                     Session.Add("selectedProduct", selected);
 
+                    Page.Title = selected.name;
+
                     txtId.Text = id;
                     txtName.Text = selected.name;
                     txtDescription.Text = selected.description;
@@ -64,6 +66,7 @@ namespace Catalogo_Web
                 else
                 {
                     btnEliminar.Visible = false;
+                    Page.Title = "Añadir producto";
                 }
 
             }
